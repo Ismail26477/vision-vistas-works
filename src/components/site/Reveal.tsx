@@ -16,12 +16,13 @@ export function Reveal({
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
           setShown(true);
           io.disconnect();
         }
       },
+
       { threshold: 0.12 },
     );
     io.observe(el);
