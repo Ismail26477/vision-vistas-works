@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { CTABanner, PageHero, Section, SectionHeading } from "@/components/site/Sections";
 import { processSteps, services } from "@/lib/site-data";
+import pageBanner from "@/assets/banner-services.jpg";
 
 const title = "IT Services | Web, SaaS, AI Automation & Marketing — Nexvora";
 const description =
@@ -28,6 +29,7 @@ function Services() {
   return (
     <>
       <PageHero
+        image={pageBanner}
         eyebrow="Our Services"
         title="Full-stack digital capability under one roof"
         subtitle="From the first line of code to the last rupee of ad spend — nine services designed to work together instead of across vendors."

@@ -8,7 +8,7 @@ import {
   ShieldCheck,
   Users,
 } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
+import { HeroSlider } from "@/components/site/HeroSlider";
 import { Reveal } from "@/components/site/Reveal";
 import { CTABanner, Section, SectionHeading } from "@/components/site/Sections";
 import { Testimonials } from "@/components/site/Testimonials";
@@ -45,15 +45,10 @@ function Home() {
     <>
       {/* Hero */}
       <section className="relative flex min-h-screen items-center overflow-hidden">
-        <img
-          src={heroImg}
-          alt="Nexvora engineering team collaborating in the Bengaluru office"
-          width={1600}
-          height={1008}
-          className="animate-slide-in-right absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-        <div className="container-x relative z-10 py-28">
+        <HeroSlider />
+        <div className="absolute inset-0 z-10" style={{ background: "var(--gradient-hero)" }} />
+
+        <div className="container-x relative z-20 py-28">
           <Reveal>
             <span className="eyebrow">IT Solutions · Bengaluru, India</span>
           </Reveal>

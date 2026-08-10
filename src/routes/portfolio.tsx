@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { CTABanner, PageHero, Section, SectionHeading } from "@/components/site/Sections";
 import { projects } from "@/lib/site-data";
+import pageBanner from "@/assets/banner-portfolio.jpg";
 
 const title = "Portfolio & Gallery | Projects by Nexvora Technologies";
 const description =
@@ -31,6 +32,7 @@ function Portfolio() {
   return (
     <>
       <PageHero
+        image={pageBanner}
         eyebrow="Portfolio / Gallery"
         title="Projects that moved real business numbers"
         subtitle="Every case below is a live engagement — filter by capability to see how we approach each type of problem."
