@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { PageHero, Section } from "@/components/site/Sections";
 import { company } from "@/lib/site-data";
+import pageBanner from "@/assets/banner-contact.jpg";
 
 const title = "Contact Nexvora Technologies | Bengaluru IT Solutions Company";
 const description =
@@ -36,6 +37,7 @@ function Contact() {
   return (
     <>
       <PageHero
+        image={pageBanner}
         eyebrow="Contact Us"
         title="Tell us what you're building"
         subtitle="Share a few details and a senior consultant — not a sales bot — will reply within one business day."

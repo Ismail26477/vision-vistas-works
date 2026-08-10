@@ -48,7 +48,7 @@ function Home() {
         <HeroSlider />
         <div className="absolute inset-0 z-10" style={{ background: "var(--gradient-hero)" }} />
 
-        <div className="container-x relative z-10 py-28">
+        <div className="container-x relative z-20 py-28">
           <Reveal>
             <span className="eyebrow">IT Solutions · Bengaluru, India</span>
           </Reveal>

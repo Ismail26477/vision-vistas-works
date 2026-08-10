@@ -4,6 +4,7 @@ import storyImg from "@/assets/story.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import { CTABanner, PageHero, Section, SectionHeading } from "@/components/site/Sections";
 import { milestones, projects, stats, team } from "@/lib/site-data";
+import pageBanner from "@/assets/banner-about.jpg";
 
 const title = "About Nexvora Technologies | Our Story, Team & Journey";
 const description =
@@ -25,6 +26,7 @@ function About() {
   return (
     <>
       <PageHero
+        image={pageBanner}
         eyebrow="About Us"
         title="Nine years of building software India actually uses"
         subtitle="We started as two engineers in a rented Bengaluru desk. Today we're a 60-person team shipping products, platforms and campaigns for clients across five countries."
