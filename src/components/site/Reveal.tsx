@@ -26,7 +26,21 @@ export function Reveal({
       { threshold: 0.12 },
     );
     io.observe(el);
-    return () => io.disconnect();
+
+    const check = () => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        setShown(true);
+        io.disconnect();
+      }
+    };
+    const t1 = window.setTimeout(check, 60);
+    const t2 = window.setTimeout(check, 400);
+    return () => {
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+      io.disconnect();
+    };
   }, []);
 
   return (
