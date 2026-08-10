@@ -260,6 +260,86 @@ export const testimonials = [
     quote:
       "Organic traffic went from an afterthought to our largest channel. Genuinely a partner, not a vendor.",
   },
+  {
+    name: "Priyanka Joshi",
+    role: "Head of Digital, Sahyadri Realty",
+    image: person2,
+    rating: 5,
+    quote:
+      "Our property portal now routes every enquiry automatically. Site visits booked per month went up 2.4x in one quarter.",
+  },
+  {
+    name: "Imran Shaikh",
+    role: "Director, Deccan Hospitality Group",
+    image: person3,
+    rating: 5,
+    quote:
+      "Direct bookings finally beat the OTAs. The booking engine is fast, clean and our front desk actually enjoys using it.",
+  },
+  {
+    name: "Neha Agarwal",
+    role: "Founder, Bloom Skin Clinics",
+    image: person4,
+    rating: 5,
+    quote:
+      "Appointment no-shows dropped sharply after the WhatsApp reminder automation went live. Simple idea, brilliant execution.",
+  },
+  {
+    name: "Sandeep Rao",
+    role: "VP Sales, GrabDeal Enterprise",
+    image: person1,
+    rating: 5,
+    quote:
+      "The CRM gave us full visibility of the sales floor. Response time to inbound leads is now minutes, not hours.",
+  },
+  {
+    name: "Fatima Qureshi",
+    role: "Marketing Manager, NovaMart Retail",
+    image: person2,
+    rating: 4,
+    quote:
+      "Abandoned cart recovery alone paid for the whole engagement within two months. Reporting is refreshingly honest.",
+  },
+  {
+    name: "Rahul Chowdhury",
+    role: "COO, Gode Engineering",
+    image: person3,
+    rating: 5,
+    quote:
+      "Our legacy catalogue became a proper industrial portal. RFQs now arrive with complete specs, no more phone tag.",
+  },
+  {
+    name: "Divya Menon",
+    role: "Principal, Vidya Global School",
+    image: person4,
+    rating: 5,
+    quote:
+      "The admission funnel and counselling bot handle the first response at 11 pm. Our counsellors only speak to serious parents.",
+  },
+  {
+    name: "Aakash Patel",
+    role: "Founder, FinEdge Advisors",
+    image: person1,
+    rating: 5,
+    quote:
+      "Cost per acquisition fell 38% in the first 90 days while lead quality improved. They cut what didn't work, fast.",
+  },
+  {
+    name: "Shruti Bansal",
+    role: "Brand Lead, Aarambh Foods",
+    image: person2,
+    rating: 5,
+    quote:
+      "Design, build and campaigns from one team meant no finger-pointing. Launch happened on the exact promised date.",
+  },
+  {
+    name: "Manoj Verma",
+    role: "MD, Bright Reality International",
+    image: person3,
+    rating: 5,
+    quote:
+      "They restructured our entire web and lead management pipeline. Acquisition efficiency improved across every channel.",
+  },
 ];
 
 export const faqs = [
