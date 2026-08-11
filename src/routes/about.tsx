@@ -6,9 +6,10 @@ import { CTABanner, PageHero, Section, SectionHeading } from "@/components/site/
 import { milestones, projects, stats, team } from "@/lib/site-data";
 import pageBanner from "@/assets/banner-about.jpg";
 
-const title = "About Nexvora Technologies | Our Story, Team & Journey";
+const title = "About D-Code Studio | Nagpur Digital Transformation Agency";
 const description =
-  "Founded in Bengaluru in 2016, Nexvora is a 60-person IT solutions team delivering software, AI automation and growth marketing for Indian and global clients.";
+  "D-Code Studio is a full-service digital transformation and web engineering agency in Nagpur, Maharashtra — 50+ projects, 35+ enterprise clients, 98% client retention.";
+
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -28,8 +29,8 @@ function About() {
       <PageHero
         image={pageBanner}
         eyebrow="About Us"
-        title="Nine years of building software India actually uses"
-        subtitle="We started as two engineers in a rented Bengaluru desk. Today we're a 60-person team shipping products, platforms and campaigns for clients across five countries."
+        title="A technology partner built for measurable growth"
+        subtitle="D-Code Studio operates as a full-service digital transformation and web engineering agency based in Nagpur, Maharashtra — partnering with high-growth startups, regional enterprises and commercial brands."
         height="65vh"
       />
 
@@ -39,7 +40,7 @@ function About() {
           <Reveal>
             <img
               src={storyImg}
-              alt="Nexvora founders planning a project at the whiteboard"
+              alt="The D-Code Studio team planning a client architecture at the whiteboard"
               loading="lazy"
               width={1200}
               height={900}
@@ -47,24 +48,23 @@ function About() {
             />
           </Reveal>
           <Reveal delay={120}>
-            <span className="eyebrow">Our Story</span>
+            <span className="eyebrow">Executive Summary & Leadership</span>
             <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
-              From one client in Pune to 160+ projects delivered
+              Bespoke architectures, AI automation and acquisition engines
             </h2>
             <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               <p>
-                Nexvora began in 2016 when Arjun and Priya left large consulting firms with a simple frustration:
-                Indian businesses were paying enterprise prices for work that never shipped on time.
+                We deliver bespoke technical architectures, AI-driven automation workflows and high-performance
+                acquisition engines for organisations that measure marketing in pipeline, not impressions.
               </p>
-              <p>
-                We built the opposite — small senior teams, weekly demos, fixed blueprints and honest reporting. That
-                approach earned us referrals across retail, healthcare, logistics and fintech.
-              </p>
-              <p>
-                Today we run four practices — engineering, AI automation, design and growth — under one roof, so
-                strategy never gets lost in handovers.
-              </p>
+              <blockquote className="border-l-2 border-primary pl-4 italic text-foreground">
+                "In today's competitive landscape, technical design and strategic execution cannot exist in isolation.
+                At D-Code Studio, we build custom applications and automated growth systems designed specifically to
+                accelerate revenue pipeline velocity and deliver measurable returns."
+              </blockquote>
+              <p className="font-semibold text-foreground">— Derick, Founder & Growth Strategist</p>
             </div>
+
             <dl className="mt-8 grid grid-cols-2 gap-5 border-t border-border pt-6">
               {stats.map((s) => (
                 <div key={s.label}>
