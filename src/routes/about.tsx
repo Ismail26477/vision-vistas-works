@@ -84,15 +84,16 @@ function About() {
             {
               icon: Target,
               label: "Mission",
-              title: "Make world-class technology affordable for Indian businesses",
-              text: "We exist to give every ambitious company — a 12-store retailer or a Series B startup — access to the same engineering quality that global enterprises buy, at pricing and pace that fit the Indian market.",
+              title: "Build technology that converts, not just launches",
+              text: "We design custom technical architectures tailored directly to organisational goals, operational workflows and end-user needs — then hold every build accountable to lead velocity, conversion rate and acquisition cost.",
             },
             {
               icon: Compass,
               label: "Vision",
-              title: "Be India's most trusted digital delivery partner by 2030",
-              text: "A thousand businesses running on systems we built, a team that grows careers rather than churns them, and a reputation where our clients' referrals remain our largest source of new work.",
+              title: "The growth engineering partner for India's ambitious brands",
+              text: "High-performance web frameworks, custom AI interfaces and scalable marketing stacks under one roof, so startups, regional enterprises and commercial brands never have to stitch four vendors together again.",
             },
+
           ].map((c, i) => (
             <Reveal key={c.label} delay={i * 100}>
               <div className="surface-card h-full p-8">
@@ -110,7 +111,7 @@ function About() {
 
       {/* Journey */}
       <Section>
-        <SectionHeading eyebrow="Company Journey" title="Milestones that shaped Nexvora" center />
+        <SectionHeading eyebrow="Evolution & Expansion Roadmap" title="Four phases of building D-Code Studio" center />
         <div className="relative mt-12">
           <div className="absolute left-4 top-0 h-full w-px bg-border md:left-1/2" />
           <div className="space-y-8">
@@ -141,10 +142,11 @@ function About() {
       {/* Team */}
       <Section className="bg-[var(--surface)]">
         <SectionHeading
-          eyebrow="Team Members"
+          eyebrow="Leadership & Practices"
           title="The people you'll actually work with"
-          text="Founders stay involved in every account — no handover to a junior team after the pitch."
+          text="The founder stays involved in every account — no handover to a junior team after the pitch."
         />
+
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {team.map((m, i) => (
             <Reveal key={m.name} delay={i * 80}>

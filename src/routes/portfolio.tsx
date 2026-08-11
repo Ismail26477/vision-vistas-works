@@ -6,9 +6,10 @@ import { CTABanner, PageHero, Section, SectionHeading } from "@/components/site/
 import { projects } from "@/lib/site-data";
 import pageBanner from "@/assets/banner-portfolio.jpg";
 
-const title = "Portfolio & Gallery | Projects by Nexvora Technologies";
+const title = "Portfolio & Case Studies | D-Code Studio Nagpur";
 const description =
-  "Browse Nexvora's portfolio of websites, SaaS platforms, AI automation systems, mobile apps and marketing campaigns delivered for companies across India.";
+  "Featured D-Code Studio case studies: GrabDeal CRM, Bright Reality International real estate platform, Gode Engineering industrial portal and more across 10+ industries.";
+
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -33,14 +34,15 @@ function Portfolio() {
     <>
       <PageHero
         image={pageBanner}
-        eyebrow="Portfolio / Gallery"
+        eyebrow="Featured Case Studies"
         title="Projects that moved real business numbers"
-        subtitle="Every case below is a live engagement — filter by capability to see how we approach each type of problem."
+        subtitle="50+ projects delivered across 10+ industry verticals — filter by capability to see how we approach each type of problem."
         height="55vh"
       />
 
       <Section>
-        <SectionHeading eyebrow="Project Gallery" title="Work by company and category" />
+        <SectionHeading eyebrow="Project Gallery" title="Work by company and capability" />
+
         <div className="mt-8 flex flex-wrap gap-2">
           {categories.map((c) => (
             <button
