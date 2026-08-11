@@ -117,12 +117,13 @@ function Home() {
 
 
       {/* Services */}
-      <Section className="bg-[var(--surface)]">
+      <Section>
         <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
           <SectionHeading
-            eyebrow="Our Services"
+            eyebrow="Core Digital Capabilities"
             title="Everything you need to launch, scale and grow online"
-            text="Pick one capability or hand us the whole roadmap — the same team covers strategy, build and growth."
+            text="Pick one capability or hand us the whole roadmap — the same team covers engineering, branding, growth and automation."
+
           />
           <Reveal>
             <Link to="/services" className="btn-base btn-ghost">
