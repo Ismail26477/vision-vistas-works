@@ -162,12 +162,13 @@ function Home() {
       </Section>
 
       {/* Projects */}
-      <Section>
+      <Section className="bg-[var(--surface)]">
         <SectionHeading
-          eyebrow="Projects & Companies"
-          title="Work we've shipped for companies across India"
-          text="A selection of engagements from retail, healthcare, logistics, ed-tech and fintech."
+          eyebrow="Featured Case Studies"
+          title="Platforms that moved real business numbers"
+          text="Custom CRMs, real estate lead engines and industrial portals — each measured on the outcome it produced."
         />
+
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {projects.slice(0, 3).map((p, i) => (
             <Reveal key={p.slug} delay={i * 80}>
@@ -204,12 +205,13 @@ function Home() {
       </Section>
 
       {/* Process */}
-      <Section className="bg-[var(--surface)]">
+      <Section>
         <SectionHeading
-          eyebrow="Our Process"
-          title="How we take you from idea to measurable results"
+          eyebrow="Production & Delivery Methodology"
+          title="Eight steps from discovery to continuous optimisation"
           center
         />
+
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {processSteps.map((s, i) => (
             <Reveal key={s.title} delay={i * 80}>
@@ -226,13 +228,15 @@ function Home() {
       </Section>
 
       {/* Reviews */}
-      <Section>
-        <SectionHeading eyebrow="Client Reviews" title="What our clients say" center />
+      <Section className="bg-[var(--surface)]">
+        <SectionHeading eyebrow="Client Endorsements" title="What our clients say" center />
         <Testimonials />
       </Section>
 
+
       {/* FAQ */}
-      <Section className="bg-[var(--surface)]">
+      <Section>
+
         <SectionHeading
           eyebrow="FAQ"
           title="Frequently asked questions"
