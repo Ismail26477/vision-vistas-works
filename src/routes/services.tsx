@@ -6,9 +6,10 @@ import { CTABanner, PageHero, Section, SectionHeading } from "@/components/site/
 import { processSteps, services } from "@/lib/site-data";
 import pageBanner from "@/assets/banner-services.jpg";
 
-const title = "IT Services | Web, SaaS, AI Automation & Marketing — Nexvora";
+const title = "Services | Web Engineering, CRM, AI Automation — D-Code Studio";
 const description =
-  "Explore Nexvora's services: website development, SaaS product engineering, AI automation, digital marketing, performance marketing, mobile apps, cloud, design and analytics.";
+  "D-Code Studio services: custom web engineering, branding and UI/UX, performance marketing, SEO, AI workflows and automation, bespoke WhatsApp CRM development and analytics.";
+
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -30,19 +31,21 @@ function Services() {
     <>
       <PageHero
         image={pageBanner}
-        eyebrow="Our Services"
+        eyebrow="Core Digital Capabilities"
         title="Full-stack digital capability under one roof"
-        subtitle="From the first line of code to the last rupee of ad spend — nine services designed to work together instead of across vendors."
+        subtitle="From the first line of code to the last rupee of ad spend — nine capabilities designed to work together instead of across vendors."
         height="55vh"
       />
+
 
       {/* Tabs */}
       <Section>
         <SectionHeading
-          eyebrow="Service Categories"
+          eyebrow="Capability Scope"
           title="Choose a capability to explore"
-          text="Every service runs on the same delivery discipline: fixed blueprint, weekly demos, measurable outcomes."
+          text="Every capability runs on the same delivery methodology: discovery, strategy, engineering, QA and continuous optimisation."
         />
+
         <div className="mt-10 flex flex-wrap gap-2">
           {services.map((s, i) => (
             <button
@@ -91,7 +94,7 @@ function Services() {
 
       {/* Workflow */}
       <Section className="bg-[var(--surface)]">
-        <SectionHeading eyebrow="Service Workflow" title="The same disciplined process on every engagement" center />
+        <SectionHeading eyebrow="Production & Delivery Methodology" title="The same disciplined process on every engagement" center />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {processSteps.map((s, i) => (
             <Reveal key={s.title} delay={i * 70}>
@@ -111,7 +114,7 @@ function Services() {
 
       {/* 3x3 grid */}
       <Section>
-        <SectionHeading eyebrow="All Services" title="Nine ways we can help you grow" center />
+        <SectionHeading eyebrow="All Capabilities" title="Nine ways we can help you grow" center />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <Reveal key={s.slug} delay={i * 60}>

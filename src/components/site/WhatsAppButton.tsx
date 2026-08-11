@@ -3,8 +3,9 @@ import { company } from "@/lib/site-data";
 
 export function WhatsAppButton() {
   const href = `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(
-    "Hi Nexvora, I'd like to discuss a project.",
+    "Hi D-Code Studio, I'd like to discuss a project.",
   )}`;
+
 
   return (
     <a

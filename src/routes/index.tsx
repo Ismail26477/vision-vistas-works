@@ -1,23 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  BadgeCheck,
-  Clock,
-  Headphones,
-  IndianRupee,
-  ShieldCheck,
-  Users,
-} from "lucide-react";
+import { ArrowRight, Gauge, Lightbulb, Target } from "lucide-react";
 import { HeroSlider } from "@/components/site/HeroSlider";
 import { Reveal } from "@/components/site/Reveal";
 import { CTABanner, Section, SectionHeading } from "@/components/site/Sections";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Faq } from "@/components/site/Faq";
-import { company, processSteps, projects, services, stats } from "@/lib/site-data";
+import { company, coreValues, industries, processSteps, projects, services, stats } from "@/lib/site-data";
 
-const title = "Nexvora Technologies | IT Solutions, SaaS & AI Automation Company India";
+const title = "D-Code Studio | Web Engineering, AI Automation & Growth Marketing";
 const description =
-  "Bengaluru-based IT solutions company delivering website development, SaaS products, AI automation, digital and performance marketing for Indian and global businesses.";
+  "Nagpur-based digital transformation agency delivering custom web applications, branding, performance marketing, SEO, AI workflows and bespoke WhatsApp CRMs.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,14 +23,9 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const whyUs = [
-  { icon: IndianRupee, title: "India-first pricing", text: "Transparent, GST-compliant quotes with no hidden retainers or surprise change requests." },
-  { icon: Clock, title: "On-time delivery", text: "94% of our sprints ship on the committed date, with weekly demos so nothing drifts." },
-  { icon: ShieldCheck, title: "You own everything", text: "Source code, cloud accounts and data handed over in full at project close." },
-  { icon: Users, title: "Senior teams only", text: "No trainee-swaps mid-project. The engineers in the pitch are the ones who build it." },
-  { icon: Headphones, title: "IST support hours", text: "Real humans on call in your timezone, on WhatsApp and phone, not just ticket queues." },
-  { icon: BadgeCheck, title: "Outcome reporting", text: "Every engagement is measured against revenue, leads or hours saved — never vanity metrics." },
-];
+const valueIcons = [Lightbulb, Target, Gauge];
+const whyUs = coreValues.map((v, i) => ({ ...v, icon: valueIcons[i]! }));
+
 
 function Home() {
   return (
@@ -50,19 +37,20 @@ function Home() {
 
         <div className="container-x relative z-20 py-28">
           <Reveal>
-            <span className="eyebrow">IT Solutions · Bengaluru, India</span>
+            <span className="eyebrow">Digital Growth & Technology Solutions · Nagpur, India</span>
           </Reveal>
           <Reveal delay={120}>
             <h1 className="mt-5 max-w-4xl text-4xl font-extrabold leading-[1.03] sm:text-6xl lg:text-7xl">
-              We build the <span className="text-gradient">digital engine</span> behind India's ambitious brands.
+              We engineer the <span className="text-gradient">growth systems</span> behind ambitious brands.
             </h1>
           </Reveal>
           <Reveal delay={220}>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Websites, SaaS platforms, AI automation and performance marketing — designed, engineered and grown by one
-              accountable team. 160+ projects delivered since 2016.
+              D-Code Studio builds custom web applications, AI automation workflows and high-performance acquisition
+              engines designed to accelerate pipeline velocity and deliver measurable returns.
             </p>
           </Reveal>
+
           <Reveal delay={320}>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link to="/contact" className="btn-base btn-primary">
@@ -86,12 +74,12 @@ function Home() {
         </div>
       </section>
 
-      {/* Why choose us */}
+      {/* Core values */}
       <Section>
         <SectionHeading
-          eyebrow="Why Choose Us?"
-          title="A delivery partner that behaves like your in-house team"
-          text="Most agencies sell hours. We sell outcomes, and we structure every engagement so you can see progress every single week."
+          eyebrow="Core Agency Values"
+          title="Technical design and strategic execution, never in isolation"
+          text="Every engagement is structured around three principles that decide how we build, who we build for and how success is measured."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {whyUs.map((w, i) => (
@@ -108,13 +96,34 @@ function Home() {
         </div>
       </Section>
 
-      {/* Services */}
+      {/* Industries */}
       <Section className="bg-[var(--surface)]">
+        <SectionHeading
+          eyebrow="Industries Served"
+          title="Ten-plus verticals, each with its own playbook"
+          center
+        />
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {industries.map((ind, i) => (
+            <Reveal key={ind.title} delay={i * 60}>
+              <div className="surface-card h-full p-7">
+                <h3 className="text-base font-bold uppercase tracking-widest text-primary">{ind.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{ind.text}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+
+      {/* Services */}
+      <Section>
         <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
           <SectionHeading
-            eyebrow="Our Services"
+            eyebrow="Core Digital Capabilities"
             title="Everything you need to launch, scale and grow online"
-            text="Pick one capability or hand us the whole roadmap — the same team covers strategy, build and growth."
+            text="Pick one capability or hand us the whole roadmap — the same team covers engineering, branding, growth and automation."
+
           />
           <Reveal>
             <Link to="/services" className="btn-base btn-ghost">
@@ -153,12 +162,13 @@ function Home() {
       </Section>
 
       {/* Projects */}
-      <Section>
+      <Section className="bg-[var(--surface)]">
         <SectionHeading
-          eyebrow="Projects & Companies"
-          title="Work we've shipped for companies across India"
-          text="A selection of engagements from retail, healthcare, logistics, ed-tech and fintech."
+          eyebrow="Featured Case Studies"
+          title="Platforms that moved real business numbers"
+          text="Custom CRMs, real estate lead engines and industrial portals — each measured on the outcome it produced."
         />
+
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {projects.slice(0, 3).map((p, i) => (
             <Reveal key={p.slug} delay={i * 80}>
@@ -195,12 +205,13 @@ function Home() {
       </Section>
 
       {/* Process */}
-      <Section className="bg-[var(--surface)]">
+      <Section>
         <SectionHeading
-          eyebrow="Our Process"
-          title="How we take you from idea to measurable results"
+          eyebrow="Production & Delivery Methodology"
+          title="Eight steps from discovery to continuous optimisation"
           center
         />
+
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {processSteps.map((s, i) => (
             <Reveal key={s.title} delay={i * 80}>
@@ -217,13 +228,15 @@ function Home() {
       </Section>
 
       {/* Reviews */}
-      <Section>
-        <SectionHeading eyebrow="Client Reviews" title="What our clients say" center />
+      <Section className="bg-[var(--surface)]">
+        <SectionHeading eyebrow="Client Endorsements" title="What our clients say" center />
         <Testimonials />
       </Section>
 
+
       {/* FAQ */}
-      <Section className="bg-[var(--surface)]">
+      <Section>
+
         <SectionHeading
           eyebrow="FAQ"
           title="Frequently asked questions"

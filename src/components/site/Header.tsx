@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { company } from "@/lib/site-data";
+import { Logo } from "./Logo";
+
 
 const nav = [
   { to: "/", label: "Home" },
@@ -37,13 +39,10 @@ export function Header() {
     >
       <div className="container-x flex h-18 items-center justify-between gap-4 py-3">
         <Link to="/" className="flex min-w-0 items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground">
-            <Sparkles size={20} />
-          </span>
-          <span className="truncate font-display text-lg font-extrabold tracking-tight">
-            Nex<span className="text-gradient">vora</span>
-          </span>
+          <Logo className="h-11 w-auto" />
+          <span className="sr-only">D-Code Studio</span>
         </Link>
+
 
         <nav className="hidden items-center gap-1 lg:flex">
           {nav.map((item) => (

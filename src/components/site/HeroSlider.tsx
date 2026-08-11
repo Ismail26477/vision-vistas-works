@@ -5,7 +5,7 @@ import hero3 from "@/assets/hero3.jpg";
 import hero4 from "@/assets/hero4.jpg";
 
 const slides = [
-  { src: hero1, alt: "Nexvora engineering team collaborating in the Bengaluru office" },
+  { src: hero1, alt: "D-Code Studio engineering team collaborating in the Nagpur studio" },
   { src: hero2, alt: "Developers writing code on multiple monitors at night" },
   { src: hero3, alt: "Performance marketing team reviewing campaign dashboards" },
   { src: hero4, alt: "AI automation engineer working beside live data visualisations" },

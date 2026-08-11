@@ -1,33 +1,30 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Sparkles, Youtube } from "lucide-react";
+import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { company, services } from "@/lib/site-data";
+import { Logo } from "./Logo";
 
 export function Footer() {
   return (
     <footer className="border-t border-border bg-[var(--surface)]">
       <div className="container-x grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2.5">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground">
-              <Sparkles size={20} />
-            </span>
-            <span className="font-display text-lg font-extrabold">
-              Nex<span className="text-gradient">vora</span>
-            </span>
-          </div>
+          <Logo className="h-12 w-auto" />
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            {company.name} builds websites, SaaS products, AI automation and growth engines for ambitious Indian and
-            global businesses.
+            {company.name} is a full-service digital transformation and web engineering agency in Nagpur, delivering
+            bespoke technical architectures, AI-driven automation and high-performance acquisition engines.
           </p>
-          <p className="mt-3 text-xs text-muted-foreground">{company.gst}</p>
+          <p className="mt-3 text-xs text-muted-foreground">{company.website}</p>
           <div className="mt-5 flex gap-2">
-            {[Linkedin, Instagram, Facebook, Youtube].map((Icon, i) => (
+            {[
+              { Icon: Linkedin, href: company.linkedin, label: "LinkedIn" },
+              { Icon: Instagram, href: company.instagram, label: "Instagram" },
+            ].map(({ Icon, href, label }) => (
               <a
-                key={i}
-                href="https://www.linkedin.com"
+                key={label}
+                href={href}
                 target="_blank"
                 rel="noreferrer noopener"
-                aria-label="Social profile"
+                aria-label={label}
                 className="grid h-10 w-10 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
               >
                 <Icon size={18} />
@@ -35,6 +32,7 @@ export function Footer() {
             ))}
           </div>
         </div>
+
 
         <div>
           <h3 className="text-sm font-bold uppercase tracking-widest text-foreground">Quick Links</h3>
