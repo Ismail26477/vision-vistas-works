@@ -1,23 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  BadgeCheck,
-  Clock,
-  Headphones,
-  IndianRupee,
-  ShieldCheck,
-  Users,
-} from "lucide-react";
+import { ArrowRight, Gauge, Lightbulb, Target } from "lucide-react";
 import { HeroSlider } from "@/components/site/HeroSlider";
 import { Reveal } from "@/components/site/Reveal";
 import { CTABanner, Section, SectionHeading } from "@/components/site/Sections";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Faq } from "@/components/site/Faq";
-import { company, processSteps, projects, services, stats } from "@/lib/site-data";
+import { company, coreValues, industries, processSteps, projects, services, stats } from "@/lib/site-data";
 
-const title = "Nexvora Technologies | IT Solutions, SaaS & AI Automation Company India";
+const title = "D-Code Studio | Web Engineering, AI Automation & Growth Marketing";
 const description =
-  "Bengaluru-based IT solutions company delivering website development, SaaS products, AI automation, digital and performance marketing for Indian and global businesses.";
+  "Nagpur-based digital transformation agency delivering custom web applications, branding, performance marketing, SEO, AI workflows and bespoke WhatsApp CRMs.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,14 +23,9 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const whyUs = [
-  { icon: IndianRupee, title: "India-first pricing", text: "Transparent, GST-compliant quotes with no hidden retainers or surprise change requests." },
-  { icon: Clock, title: "On-time delivery", text: "94% of our sprints ship on the committed date, with weekly demos so nothing drifts." },
-  { icon: ShieldCheck, title: "You own everything", text: "Source code, cloud accounts and data handed over in full at project close." },
-  { icon: Users, title: "Senior teams only", text: "No trainee-swaps mid-project. The engineers in the pitch are the ones who build it." },
-  { icon: Headphones, title: "IST support hours", text: "Real humans on call in your timezone, on WhatsApp and phone, not just ticket queues." },
-  { icon: BadgeCheck, title: "Outcome reporting", text: "Every engagement is measured against revenue, leads or hours saved — never vanity metrics." },
-];
+const valueIcons = [Lightbulb, Target, Gauge];
+const whyUs = coreValues.map((v, i) => ({ ...v, icon: valueIcons[i]! }));
+
 
 function Home() {
   return (
