@@ -37,19 +37,20 @@ function Home() {
 
         <div className="container-x relative z-20 py-28">
           <Reveal>
-            <span className="eyebrow">IT Solutions · Bengaluru, India</span>
+            <span className="eyebrow">Digital Growth & Technology Solutions · Nagpur, India</span>
           </Reveal>
           <Reveal delay={120}>
             <h1 className="mt-5 max-w-4xl text-4xl font-extrabold leading-[1.03] sm:text-6xl lg:text-7xl">
-              We build the <span className="text-gradient">digital engine</span> behind India's ambitious brands.
+              We engineer the <span className="text-gradient">growth systems</span> behind ambitious brands.
             </h1>
           </Reveal>
           <Reveal delay={220}>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Websites, SaaS platforms, AI automation and performance marketing — designed, engineered and grown by one
-              accountable team. 160+ projects delivered since 2016.
+              D-Code Studio builds custom web applications, AI automation workflows and high-performance acquisition
+              engines designed to accelerate pipeline velocity and deliver measurable returns.
             </p>
           </Reveal>
+
           <Reveal delay={320}>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link to="/contact" className="btn-base btn-primary">
@@ -73,12 +74,12 @@ function Home() {
         </div>
       </section>
 
-      {/* Why choose us */}
+      {/* Core values */}
       <Section>
         <SectionHeading
-          eyebrow="Why Choose Us?"
-          title="A delivery partner that behaves like your in-house team"
-          text="Most agencies sell hours. We sell outcomes, and we structure every engagement so you can see progress every single week."
+          eyebrow="Core Agency Values"
+          title="Technical design and strategic execution, never in isolation"
+          text="Every engagement is structured around three principles that decide how we build, who we build for and how success is measured."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {whyUs.map((w, i) => (
@@ -94,6 +95,26 @@ function Home() {
           ))}
         </div>
       </Section>
+
+      {/* Industries */}
+      <Section className="bg-[var(--surface)]">
+        <SectionHeading
+          eyebrow="Industries Served"
+          title="Ten-plus verticals, each with its own playbook"
+          center
+        />
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {industries.map((ind, i) => (
+            <Reveal key={ind.title} delay={i * 60}>
+              <div className="surface-card h-full p-7">
+                <h3 className="text-base font-bold uppercase tracking-widest text-primary">{ind.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{ind.text}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
 
       {/* Services */}
       <Section className="bg-[var(--surface)]">
