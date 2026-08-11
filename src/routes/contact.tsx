@@ -1,14 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Clock, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Send, Youtube } from "lucide-react";
+import { Clock, Globe, Instagram, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { PageHero, Section } from "@/components/site/Sections";
 import { company } from "@/lib/site-data";
 import pageBanner from "@/assets/banner-contact.jpg";
 
-const title = "Contact Nexvora Technologies | Bengaluru IT Solutions Company";
+const title = "Contact D-Code Studio | Nagpur Web & Growth Agency";
 const description =
-  "Talk to Nexvora about your website, SaaS, AI automation or marketing project. Call +91 98765 43210, email hello@nexvora.in or visit our Bengaluru office.";
+  "Talk to D-Code Studio about your website, CRM, AI automation or marketing project. Call +91 70205 03794, email dcodestudio.agency@gmail.com or reach us in Nagpur.";
+
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -66,7 +67,7 @@ function Contact() {
                 </label>
                 <label className="block text-sm">
                   <span className="mb-2 block font-semibold">Subject *</span>
-                  <input required name="subject" className={field} placeholder="Website / SaaS / AI / Marketing" />
+                  <input required name="subject" className={field} placeholder="Web / CRM / AI / Marketing" />
                 </label>
               </div>
 
@@ -118,8 +119,22 @@ function Contact() {
                 <li className="flex gap-4">
                   <MapPin size={20} className="mt-0.5 shrink-0 text-primary" />
                   <div className="min-w-0">
-                    <p className="font-semibold">Office address</p>
+                    <p className="font-semibold">Headquarters</p>
                     <p className="text-muted-foreground">{company.address}</p>
+                  </div>
+                </li>
+                <li className="flex gap-4">
+                  <Globe size={20} className="mt-0.5 shrink-0 text-primary" />
+                  <div className="min-w-0">
+                    <p className="font-semibold">Web portal</p>
+                    <a
+                      href={`https://${company.website}`}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="text-muted-foreground hover:text-primary"
+                    >
+                      {company.website}
+                    </a>
                   </div>
                 </li>
                 <li className="flex gap-4">
@@ -133,19 +148,23 @@ function Contact() {
 
               <p className="mt-8 text-sm font-semibold">Follow us</p>
               <div className="mt-3 flex gap-2">
-                {[Linkedin, Instagram, Facebook, Youtube].map((Icon, i) => (
+                {[
+                  { Icon: Linkedin, href: company.linkedin, label: "LinkedIn" },
+                  { Icon: Instagram, href: company.instagram, label: "Instagram" },
+                ].map(({ Icon, href, label }) => (
                   <a
-                    key={i}
-                    href="https://www.linkedin.com"
+                    key={label}
+                    href={href}
                     target="_blank"
                     rel="noreferrer noopener"
-                    aria-label="Social profile"
+                    aria-label={label}
                     className="grid h-11 w-11 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
                   >
                     <Icon size={18} />
                   </a>
                 ))}
               </div>
+
             </div>
           </Reveal>
         </div>
@@ -153,17 +172,18 @@ function Contact() {
 
       <Section className="bg-[var(--surface)]">
         <Reveal>
-          <h2 className="text-2xl font-extrabold sm:text-3xl">Find our office</h2>
-          <p className="mt-2 text-sm text-muted-foreground">Prestige Tech Park, Outer Ring Road, Bengaluru.</p>
+          <h2 className="text-2xl font-extrabold sm:text-3xl">Find us</h2>
+          <p className="mt-2 text-sm text-muted-foreground">Headquarters in Nagpur, Maharashtra.</p>
           <div className="mt-6 overflow-hidden rounded-3xl border border-border">
             <iframe
-              title="Nexvora Technologies office location on Google Maps"
-              src="https://www.google.com/maps?q=Prestige%20Tech%20Park%20Outer%20Ring%20Road%20Bengaluru&output=embed"
+              title="D-Code Studio location on Google Maps"
+              src="https://www.google.com/maps?q=Nagpur%20Maharashtra%20India&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="h-[320px] w-full border-0 sm:h-[420px]"
             />
           </div>
+
         </Reveal>
       </Section>
     </>
