@@ -31,48 +31,49 @@ function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex min-h-screen items-center overflow-hidden">
+      <section className="relative flex min-h-[100svh] items-center overflow-hidden">
         <HeroSlider />
         <div className="absolute inset-0 z-10" style={{ background: "var(--gradient-hero)" }} />
 
-        <div className="container-x relative z-20 py-28">
+        <div className="container-x relative z-20 py-24 sm:py-20">
           <Reveal>
-            <span className="eyebrow">Digital Growth & Technology Solutions · Nagpur, India</span>
+            <span className="eyebrow text-[0.65rem] sm:text-xs">Digital Growth & Technology Solutions · Nagpur, India</span>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="mt-5 max-w-4xl text-4xl font-extrabold leading-[1.03] sm:text-6xl lg:text-7xl">
+            <h1 className="mt-4 max-w-3xl text-[1.75rem] font-extrabold leading-[1.15] sm:text-4xl lg:text-5xl">
               We engineer the <span className="text-gradient">growth systems</span> behind ambitious brands.
             </h1>
           </Reveal>
           <Reveal delay={220}>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
               D-Code Studio builds custom web applications, AI automation workflows and high-performance acquisition
               engines designed to accelerate pipeline velocity and deliver measurable returns.
             </p>
           </Reveal>
 
           <Reveal delay={320}>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link to="/contact" className="btn-base btn-primary">
-                Get Started <ArrowRight size={18} />
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link to="/contact" className="btn-base btn-primary text-sm">
+                Get Started <ArrowRight size={16} />
               </Link>
-              <Link to="/services" className="btn-base btn-ghost">
+              <Link to="/services" className="btn-base btn-ghost text-sm">
                 Explore Services
               </Link>
             </div>
           </Reveal>
           <Reveal delay={420}>
-            <dl className="mt-14 grid max-w-3xl grid-cols-2 gap-6 border-t border-border pt-8 sm:grid-cols-4">
+            <dl className="mt-8 grid max-w-2xl grid-cols-2 gap-4 border-t border-border pt-6 sm:grid-cols-4 sm:gap-6">
               {stats.map((s) => (
                 <div key={s.label}>
-                  <dt className="font-display text-3xl font-extrabold text-primary">{s.value}</dt>
-                  <dd className="mt-1 text-xs text-muted-foreground sm:text-sm">{s.label}</dd>
+                  <dt className="font-display text-xl font-extrabold text-primary sm:text-2xl">{s.value}</dt>
+                  <dd className="mt-1 text-[0.7rem] text-muted-foreground sm:text-xs">{s.label}</dd>
                 </div>
               ))}
             </dl>
           </Reveal>
         </div>
       </section>
+
 
       {/* Core values */}
       <Section>
@@ -103,16 +104,28 @@ function Home() {
           title="Ten-plus verticals, each with its own playbook"
           center
         />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
           {industries.map((ind, i) => (
             <Reveal key={ind.title} delay={i * 60}>
-              <div className="surface-card h-full p-7">
-                <h3 className="text-base font-bold uppercase tracking-widest text-primary">{ind.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{ind.text}</p>
-              </div>
+              <article className="group relative h-full min-h-[200px] overflow-hidden rounded-2xl border border-border sm:min-h-[240px]">
+                <img
+                  src={ind.image}
+                  alt={ind.title}
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.19_0.035_195/0.95)_25%,oklch(0.19_0.035_195/0.55)_70%,oklch(0.19_0.035_195/0.2)_100%)]" />
+                <div className="relative flex h-full flex-col justify-end p-4 sm:p-6">
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">{ind.title}</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-foreground/85 sm:text-sm">{ind.text}</p>
+                </div>
+              </article>
             </Reveal>
           ))}
         </div>
+
       </Section>
 
 
@@ -212,19 +225,31 @@ function Home() {
           center
         />
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
           {processSteps.map((s, i) => (
             <Reveal key={s.title} delay={i * 80}>
-              <div className="surface-card h-full p-7">
-                <span className="font-display text-4xl font-extrabold text-primary/40">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-3 text-lg font-bold">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
-              </div>
+              <article className="group relative h-full min-h-[190px] overflow-hidden rounded-2xl border border-border sm:min-h-[230px]">
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  loading="lazy"
+                  width={1200}
+                  height={800}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.19_0.035_195/0.95)_25%,oklch(0.19_0.035_195/0.6)_70%,oklch(0.19_0.035_195/0.25)_100%)]" />
+                <div className="relative flex h-full flex-col justify-end p-4 sm:p-6">
+                  <span className="font-display text-2xl font-extrabold text-primary sm:text-3xl">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-1 text-sm font-bold sm:text-base">{s.title}</h3>
+                  <p className="mt-1.5 text-xs leading-relaxed text-foreground/80 sm:text-sm">{s.text}</p>
+                </div>
+              </article>
             </Reveal>
           ))}
         </div>
+
       </Section>
 
       {/* Reviews */}
