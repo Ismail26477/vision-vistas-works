@@ -225,19 +225,31 @@ function Home() {
           center
         />
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
           {processSteps.map((s, i) => (
             <Reveal key={s.title} delay={i * 80}>
-              <div className="surface-card h-full p-7">
-                <span className="font-display text-4xl font-extrabold text-primary/40">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-3 text-lg font-bold">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
-              </div>
+              <article className="group relative h-full min-h-[190px] overflow-hidden rounded-2xl border border-border sm:min-h-[230px]">
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  loading="lazy"
+                  width={1200}
+                  height={800}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.19_0.035_195/0.95)_25%,oklch(0.19_0.035_195/0.6)_70%,oklch(0.19_0.035_195/0.25)_100%)]" />
+                <div className="relative flex h-full flex-col justify-end p-4 sm:p-6">
+                  <span className="font-display text-2xl font-extrabold text-primary sm:text-3xl">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-1 text-sm font-bold sm:text-base">{s.title}</h3>
+                  <p className="mt-1.5 text-xs leading-relaxed text-foreground/80 sm:text-sm">{s.text}</p>
+                </div>
+              </article>
             </Reveal>
           ))}
         </div>
+
       </Section>
 
       {/* Reviews */}
