@@ -7,6 +7,17 @@ import person1 from "@/assets/person1.jpg";
 import person2 from "@/assets/person2.jpg";
 import person3 from "@/assets/person3.jpg";
 import person4 from "@/assets/person4.jpg";
+import hero1 from "@/assets/hero.jpg";
+import hero2 from "@/assets/hero2.jpg";
+import hero3 from "@/assets/hero3.jpg";
+import hero4 from "@/assets/hero4.jpg";
+import storyImg from "@/assets/story.jpg";
+import indRealEstate from "@/assets/ind-realestate.jpg";
+import indHospitality from "@/assets/ind-hospitality.jpg";
+import indHealthcare from "@/assets/ind-healthcare.jpg";
+import indEducation from "@/assets/ind-education.jpg";
+import indRetail from "@/assets/ind-retail.jpg";
+import indManufacturing from "@/assets/ind-manufacturing.jpg";
 
 export const company = {
   name: "D-Code Studio",

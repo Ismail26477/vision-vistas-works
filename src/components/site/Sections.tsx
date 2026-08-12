@@ -7,7 +7,7 @@ export function PageHero({
   eyebrow,
   title,
   subtitle,
-  height = "60vh",
+  height = "52vh",
   image = banner,
 }: {
   eyebrow: string;
@@ -19,26 +19,32 @@ export function PageHero({
   return (
     <section
       className="relative flex items-end overflow-hidden"
-      style={{ minHeight: height, paddingTop: "6rem" }}
+      style={{ minHeight: height, paddingTop: "5rem" }}
     >
       <img
         src={image}
         alt=""
         aria-hidden="true"
-        loading="lazy"
         className="absolute inset-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-      <div className="container-x relative z-10 pb-14 pt-10">
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(100deg, oklch(0.19 0.035 195 / 0.9) 0%, oklch(0.19 0.035 195 / 0.6) 55%, oklch(0.19 0.035 195 / 0.15) 100%)",
+        }}
+      />
+      <div className="container-x relative z-10 pb-10 pt-8">
         <Reveal>
-          <span className="eyebrow">{eyebrow}</span>
-          <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">{title}</h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">{subtitle}</p>
+          <span className="eyebrow text-[0.65rem] sm:text-xs">{eyebrow}</span>
+          <h1 className="mt-3 max-w-2xl text-2xl font-extrabold leading-[1.15] sm:text-3xl lg:text-4xl">{title}</h1>
+          <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">{subtitle}</p>
         </Reveal>
       </div>
     </section>
   );
 }
+
 
 export function SectionHeading({
   eyebrow,
