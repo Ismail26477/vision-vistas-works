@@ -43,19 +43,22 @@ function Portfolio() {
       <Section>
         <SectionHeading eyebrow="Project Gallery" title="Work by company and capability" />
 
-        <div className="mt-8 flex flex-wrap gap-2">
+        <div className="mt-8 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-2">
           {categories.map((c) => (
             <button
               key={c}
               type="button"
               onClick={() => setFilter(c)}
               aria-pressed={filter === c}
-              className={`btn-base text-sm ${filter === c ? "btn-primary" : "btn-ghost"}`}
+              className={`btn-base w-full px-3 py-2.5 text-center text-xs leading-tight whitespace-normal sm:w-auto sm:px-5 sm:text-sm ${
+                filter === c ? "btn-primary" : "btn-ghost"
+              }`}
             >
               {c}
             </button>
           ))}
         </div>
+
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((p, i) => (
