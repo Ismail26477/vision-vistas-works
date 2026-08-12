@@ -46,14 +46,14 @@ function Services() {
           text="Every capability runs on the same delivery methodology: discovery, strategy, engineering, QA and continuous optimisation."
         />
 
-        <div className="mt-10 flex flex-wrap gap-2">
+        <div className="mt-8 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-2">
           {services.map((s, i) => (
             <button
               key={s.slug}
               type="button"
               onClick={() => setActive(i)}
               aria-pressed={active === i}
-              className={`btn-base text-sm ${
+              className={`btn-base w-full px-3 py-2.5 text-center text-xs leading-tight whitespace-normal sm:w-auto sm:px-5 sm:text-sm ${
                 active === i ? "btn-primary" : "btn-ghost"
               }`}
             >
@@ -61,6 +61,7 @@ function Services() {
             </button>
           ))}
         </div>
+
 
         <div className="mt-8 grid items-center gap-8 rounded-3xl border border-border bg-[var(--surface)] p-6 sm:p-9 lg:grid-cols-2">
           <div key={current.slug} className="animate-slide-in-right overflow-hidden rounded-2xl">
