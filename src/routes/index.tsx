@@ -104,16 +104,28 @@ function Home() {
           title="Ten-plus verticals, each with its own playbook"
           center
         />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
           {industries.map((ind, i) => (
             <Reveal key={ind.title} delay={i * 60}>
-              <div className="surface-card h-full p-7">
-                <h3 className="text-base font-bold uppercase tracking-widest text-primary">{ind.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{ind.text}</p>
-              </div>
+              <article className="group relative h-full min-h-[200px] overflow-hidden rounded-2xl border border-border sm:min-h-[240px]">
+                <img
+                  src={ind.image}
+                  alt={ind.title}
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.19_0.035_195/0.95)_25%,oklch(0.19_0.035_195/0.55)_70%,oklch(0.19_0.035_195/0.2)_100%)]" />
+                <div className="relative flex h-full flex-col justify-end p-4 sm:p-6">
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">{ind.title}</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-foreground/85 sm:text-sm">{ind.text}</p>
+                </div>
+              </article>
             </Reveal>
           ))}
         </div>
+
       </Section>
 
 
