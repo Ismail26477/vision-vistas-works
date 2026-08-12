@@ -82,35 +82,50 @@ export function Section({
   );
 }
 
-export function CTABanner() {
+export function CTABanner({
+  eyebrow = "Connect With Us",
+  title = "Let's build something your competitors will study.",
+  text = "Book a free 30-minute consultation. We'll review your current setup and share a practical roadmap — no obligation, no jargon.",
+  image = banner,
+  primaryLabel = "Connect With Us",
+  secondaryLabel = "See Our Work",
+}: {
+  eyebrow?: string;
+  title?: string;
+  text?: string;
+  image?: string;
+  primaryLabel?: string;
+  secondaryLabel?: string;
+}) {
   return (
-    <section className="relative overflow-hidden py-20">
+    <section className="relative overflow-hidden py-16 sm:py-20">
       <img
-        src={banner}
+        src={image}
         alt=""
         aria-hidden="true"
         loading="lazy"
         className="absolute inset-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(100deg, oklch(0.19 0.035 195 / 0.92) 0%, oklch(0.19 0.035 195 / 0.7) 60%, oklch(0.19 0.035 195 / 0.25) 100%)",
+        }}
+      />
       <div className="container-x relative z-10">
         <Reveal className="grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_auto]">
           <div>
-            <span className="eyebrow">Connect With Us</span>
-            <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
-              Let's build something your competitors will study.
-            </h2>
-            <p className="mt-4 max-w-xl text-muted-foreground">
-              Book a free 30-minute consultation. We'll review your current setup and share a practical roadmap — no
-              obligation, no jargon.
-            </p>
+            <span className="eyebrow">{eyebrow}</span>
+            <h2 className="mt-3 text-2xl font-extrabold leading-tight sm:text-3xl">{title}</h2>
+            <p className="mt-3 max-w-xl text-sm text-muted-foreground sm:text-base">{text}</p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link to="/contact" className="btn-base btn-primary">
-              Connect With Us
+              {primaryLabel}
             </Link>
             <Link to="/portfolio" className="btn-base btn-ghost">
-              See Our Work
+              {secondaryLabel}
             </Link>
           </div>
         </Reveal>
@@ -118,3 +133,4 @@ export function CTABanner() {
     </section>
   );
 }
+
