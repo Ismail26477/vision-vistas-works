@@ -206,7 +206,14 @@ function About() {
         </div>
       </Section>
 
-      <CTABanner />
+      <CTABanner
+        image={pageBanner}
+        eyebrow="Work With Our Team"
+        title="Nine years of engineering. One partner for your next build."
+        text="Meet the team behind 50+ launches. Tell us your goal and we'll map the architecture, timeline and budget in a single call."
+        primaryLabel="Talk To The Team"
+        secondaryLabel="See Case Studies"
+      />
     </>
   );
 }

@@ -142,7 +142,14 @@ function Portfolio() {
         </div>
       ) : null}
 
-      <CTABanner />
+      <CTABanner
+        image={pageBanner}
+        eyebrow="Your Project Next"
+        title="Every case study here started as a 30-minute conversation."
+        text="Bring us the problem — lead leakage, slow site, manual follow-ups — and we'll show you what a fix looks like in practice."
+        primaryLabel="Start Your Project"
+        secondaryLabel="Browse More Work"
+      />
     </>
   );
 }

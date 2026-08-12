@@ -149,7 +149,14 @@ function Services() {
         </div>
       </Section>
 
-      <CTABanner />
+      <CTABanner
+        image={pageBanner}
+        eyebrow="Scope Your Project"
+        title="Not sure which capability you need? Start with a free audit."
+        text="Send us your current website, funnel or CRM setup. We'll return a prioritised list of what to fix first and what it will cost."
+        primaryLabel="Request An Audit"
+        secondaryLabel="View Our Work"
+      />
     </>
   );
 }
