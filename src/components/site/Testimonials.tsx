@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
+import { Quote } from "lucide-react";
 import { testimonials } from "@/lib/site-data";
 
 function usePerView() {
@@ -32,7 +32,7 @@ export function Testimonials() {
 
   useEffect(() => {
     if (paused) return;
-    const t = setInterval(() => setI((v) => (v >= maxIndex ? 0 : v + 1)), 4500);
+    const t = setInterval(() => setI((v) => (v >= maxIndex ? 0 : v + 1)), 4000);
     return () => clearInterval(t);
   }, [paused, maxIndex]);
 
@@ -49,71 +49,18 @@ export function Testimonials() {
           style={{ transform: `translateX(-${i * (100 / perView)}%)` }}
         >
           {testimonials.map((t) => (
-            <div
-              key={t.name}
-              className="shrink-0 px-2"
-              style={{ width: `${100 / perView}%` }}
-            >
+            <div key={t.name + t.role} className="shrink-0 px-2" style={{ width: `${100 / perView}%` }}>
               <figure className="surface-card flex h-full flex-col p-6 sm:p-7">
-                <Quote className="text-primary" size={30} />
-                <blockquote className="mt-4 flex-1 text-base leading-relaxed">"{t.quote}"</blockquote>
-                <div className="mt-6 flex min-w-0 items-center gap-3">
-                  <img
-                    src={t.image}
-                    alt={t.name}
-                    loading="lazy"
-                    width={600}
-                    height={600}
-                    className="h-12 w-12 shrink-0 rounded-full object-cover"
-                  />
-                  <figcaption className="min-w-0">
-                    <p className="truncate font-display text-sm font-bold">{t.name}</p>
-                    <p className="truncate text-xs text-muted-foreground">{t.role}</p>
-                  </figcaption>
-                </div>
-                <div className="mt-3 flex gap-0.5">
-                  {Array.from({ length: 5 }).map((_, s) => (
-                    <Star
-                      key={s}
-                      size={14}
-                      className={s < t.rating ? "fill-primary text-primary" : "text-muted-foreground"}
-                    />
-                  ))}
-                </div>
+                <Quote className="text-primary" size={26} />
+                <blockquote className="mt-4 flex-1 text-sm leading-relaxed sm:text-base">"{t.quote}"</blockquote>
+                <figcaption className="mt-6 min-w-0 border-t border-border pt-4">
+                  <p className="truncate font-display text-sm font-bold">{t.name}</p>
+                  <p className="truncate text-xs text-muted-foreground">{t.role}</p>
+                </figcaption>
               </figure>
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="mt-6 flex items-center justify-center gap-3">
-        <button
-          type="button"
-          aria-label="Previous review"
-          onClick={() => setI((v) => (v <= 0 ? maxIndex : v - 1))}
-          className="grid h-11 w-11 place-items-center rounded-full border border-border transition-colors hover:border-primary hover:text-primary"
-        >
-          <ChevronLeft size={18} />
-        </button>
-        <div className="flex flex-wrap justify-center gap-2">
-          {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
-            <button
-              key={idx}
-              type="button"
-              aria-label={`Go to review set ${idx + 1}`}
-              onClick={() => setI(idx)}
-              className={`h-2.5 rounded-full transition-all ${idx === i ? "w-7 bg-primary" : "w-2.5 bg-border"}`}
-            />
-          ))}
-        </div>
-        <button
-          type="button"
-          aria-label="Next review"
-          onClick={() => setI((v) => (v >= maxIndex ? 0 : v + 1))}
-          className="grid h-11 w-11 place-items-center rounded-full border border-border transition-colors hover:border-primary hover:text-primary"
-        >
-          <ChevronRight size={18} />
-        </button>
       </div>
     </div>
   );
