@@ -201,12 +201,12 @@ export const projects: Project[] = [
 ];
 
 export const industries = [
-  { title: "Real Estate", text: "Property display portals, lead routing CRMs and automated follow-up funnels." },
-  { title: "Hospitality", text: "Direct booking engines, guest management portals and localised search marketing." },
-  { title: "Healthcare", text: "Patient booking funnels, clinical portals and compliant digital marketing stacks." },
-  { title: "Education", text: "Student acquisition funnels, LMS portals and automated admission counselling bots." },
-  { title: "Retail & E-Commerce", text: "Storefronts, payment gateway integration and abandoned cart recovery." },
-  { title: "Manufacturing & B2B", text: "Industrial digital catalogues, spec databases and automated RFQ workflows." },
+  { title: "Real Estate", text: "Property display portals, lead routing CRMs and automated follow-up funnels.", image: indRealEstate },
+  { title: "Hospitality", text: "Direct booking engines, guest management portals and localised search marketing.", image: indHospitality },
+  { title: "Healthcare", text: "Patient booking funnels, clinical portals and compliant digital marketing stacks.", image: indHealthcare },
+  { title: "Education", text: "Student acquisition funnels, LMS portals and automated admission counselling bots.", image: indEducation },
+  { title: "Retail & E-Commerce", text: "Storefronts, payment gateway integration and abandoned cart recovery.", image: indRetail },
+  { title: "Manufacturing & B2B", text: "Industrial digital catalogues, spec databases and automated RFQ workflows.", image: indManufacturing },
 ];
 
 export const coreValues = [
@@ -225,15 +225,16 @@ export const coreValues = [
 ];
 
 export const processSteps = [
-  { title: "Discovery", text: "Objectives, timeline and scope definition agreed in writing before work starts." },
-  { title: "Analysis", text: "Market research, persona mapping and specification planning." },
-  { title: "Strategy", text: "Stack selection and roadmap architectural design." },
-  { title: "UI / UX", text: "High-fidelity wireframing and prototype validation." },
-  { title: "Engineering", text: "Scalable front-end and robust back-end build." },
-  { title: "QA & Testing", text: "Responsive checks, security review and speed audits." },
-  { title: "Deployment", text: "Server configuration, analytics setup and launch." },
-  { title: "Optimization", text: "Continuous iteration and performance scaling." },
+  { title: "Discovery", text: "Objectives, timeline and scope definition agreed in writing before work starts.", image: hero1 },
+  { title: "Analysis", text: "Market research, persona mapping and specification planning.", image: project4 },
+  { title: "Strategy", text: "Stack selection and roadmap architectural design.", image: hero3 },
+  { title: "UI / UX", text: "High-fidelity wireframing and prototype validation.", image: storyImg },
+  { title: "Engineering", text: "Scalable front-end and robust back-end build.", image: hero2 },
+  { title: "QA & Testing", text: "Responsive checks, security review and speed audits.", image: project2 },
+  { title: "Deployment", text: "Server configuration, analytics setup and launch.", image: project5 },
+  { title: "Optimization", text: "Continuous iteration and performance scaling.", image: hero4 },
 ];
+
 
 export const testimonials = [
   {
