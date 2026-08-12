@@ -31,48 +31,49 @@ function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex min-h-screen items-center overflow-hidden">
+      <section className="relative flex min-h-[100svh] items-center overflow-hidden">
         <HeroSlider />
         <div className="absolute inset-0 z-10" style={{ background: "var(--gradient-hero)" }} />
 
-        <div className="container-x relative z-20 py-28">
+        <div className="container-x relative z-20 py-24 sm:py-20">
           <Reveal>
-            <span className="eyebrow">Digital Growth & Technology Solutions · Nagpur, India</span>
+            <span className="eyebrow text-[0.65rem] sm:text-xs">Digital Growth & Technology Solutions · Nagpur, India</span>
           </Reveal>
           <Reveal delay={120}>
-            <h1 className="mt-5 max-w-4xl text-4xl font-extrabold leading-[1.03] sm:text-6xl lg:text-7xl">
+            <h1 className="mt-4 max-w-3xl text-[1.75rem] font-extrabold leading-[1.15] sm:text-4xl lg:text-5xl">
               We engineer the <span className="text-gradient">growth systems</span> behind ambitious brands.
             </h1>
           </Reveal>
           <Reveal delay={220}>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
               D-Code Studio builds custom web applications, AI automation workflows and high-performance acquisition
               engines designed to accelerate pipeline velocity and deliver measurable returns.
             </p>
           </Reveal>
 
           <Reveal delay={320}>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link to="/contact" className="btn-base btn-primary">
-                Get Started <ArrowRight size={18} />
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link to="/contact" className="btn-base btn-primary text-sm">
+                Get Started <ArrowRight size={16} />
               </Link>
-              <Link to="/services" className="btn-base btn-ghost">
+              <Link to="/services" className="btn-base btn-ghost text-sm">
                 Explore Services
               </Link>
             </div>
           </Reveal>
           <Reveal delay={420}>
-            <dl className="mt-14 grid max-w-3xl grid-cols-2 gap-6 border-t border-border pt-8 sm:grid-cols-4">
+            <dl className="mt-8 grid max-w-2xl grid-cols-2 gap-4 border-t border-border pt-6 sm:grid-cols-4 sm:gap-6">
               {stats.map((s) => (
                 <div key={s.label}>
-                  <dt className="font-display text-3xl font-extrabold text-primary">{s.value}</dt>
-                  <dd className="mt-1 text-xs text-muted-foreground sm:text-sm">{s.label}</dd>
+                  <dt className="font-display text-xl font-extrabold text-primary sm:text-2xl">{s.value}</dt>
+                  <dd className="mt-1 text-[0.7rem] text-muted-foreground sm:text-xs">{s.label}</dd>
                 </div>
               ))}
             </dl>
           </Reveal>
         </div>
       </section>
+
 
       {/* Core values */}
       <Section>
