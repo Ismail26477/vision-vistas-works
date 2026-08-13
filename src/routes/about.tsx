@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Compass, Target } from "lucide-react";
 import storyImg from "@/assets/story.jpg";
 import { Reveal } from "@/components/site/Reveal";
+import { Logo } from "@/components/site/Logo";
 import { CTABanner, PageHero, Section, SectionHeading } from "@/components/site/Sections";
 import { milestones, projects, stats, team } from "@/lib/site-data";
 import pageBanner from "@/assets/banner-about.jpg";
@@ -151,15 +152,8 @@ function About() {
           {team.map((m, i) => (
             <Reveal key={m.name} delay={i * 80}>
               <article className="surface-card group h-full overflow-hidden">
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={m.image}
-                    alt={m.name}
-                    loading="lazy"
-                    width={600}
-                    height={600}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
+                <div className="grid aspect-[16/9] place-items-center bg-[var(--surface-2)]">
+                  <Logo className="h-14 w-auto text-foreground" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-bold">{m.name}</h3>

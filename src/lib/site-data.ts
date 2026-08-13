@@ -18,6 +18,13 @@ import indHealthcare from "@/assets/ind-healthcare.jpg";
 import indEducation from "@/assets/ind-education.jpg";
 import indRetail from "@/assets/ind-retail.jpg";
 import indManufacturing from "@/assets/ind-manufacturing.jpg";
+import indLogistics from "@/assets/ind-logistics.jpg";
+import indFitness from "@/assets/ind-fitness.jpg";
+import indLegal from "@/assets/ind-legal.jpg";
+import indTravel from "@/assets/ind-travel.jpg";
+import social1 from "@/assets/social1.jpg";
+import social2 from "@/assets/social2.jpg";
+import social3 from "@/assets/social3.jpg";
 
 export const company = {
   name: "D-Code Studio",
@@ -218,6 +225,37 @@ export const industries = [
   { title: "Education", text: "Student acquisition funnels, LMS portals and automated admission counselling bots.", image: indEducation },
   { title: "Retail & E-Commerce", text: "Storefronts, payment gateway integration and abandoned cart recovery.", image: indRetail },
   { title: "Manufacturing & B2B", text: "Industrial digital catalogues, spec databases and automated RFQ workflows.", image: indManufacturing },
+  { title: "Logistics & Transport", text: "Fleet tracking dashboards, freight enquiry portals and automated dispatch updates.", image: indLogistics },
+  { title: "Fitness & Wellness", text: "Membership booking apps, class scheduling systems and local lead campaigns.", image: indFitness },
+  { title: "Legal & Finance", text: "Advisory websites, secure document workflows and compliant lead capture funnels.", image: indLegal },
+  { title: "Travel & Events", text: "Itinerary microsites, enquiry automation and seasonal performance campaigns.", image: indTravel },
+];
+
+export const socialClients = [
+  {
+    name: "Skyline Realty",
+    handle: "@skyline.realty",
+    text: "Property reels, listing carousels and lead DMs automated into the CRM.",
+    metric: "3.2x reach growth in 90 days",
+    image: social1,
+    url: "https://www.instagram.com/",
+  },
+  {
+    name: "Deccan Hospitality",
+    handle: "@deccan.hospitality",
+    text: "Food reels, festive campaigns and geo-targeted story ads for direct bookings.",
+    metric: "48% more direct table bookings",
+    image: social2,
+    url: "https://www.instagram.com/",
+  },
+  {
+    name: "Aarna Label",
+    handle: "@aarna.label",
+    text: "Shoppable posts, influencer collaborations and catalogue-linked ad sets.",
+    metric: "2.6x return on ad spend",
+    image: social3,
+    url: "https://www.instagram.com/",
+  },
 ];
 
 export const coreValues = [

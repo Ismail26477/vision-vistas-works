@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Gauge, Lightbulb, Target } from "lucide-react";
+import { ArrowRight, Gauge, Instagram, Lightbulb, Target } from "lucide-react";
 import { HeroSlider } from "@/components/site/HeroSlider";
 import { Reveal } from "@/components/site/Reveal";
 import { CTABanner, Section, SectionHeading } from "@/components/site/Sections";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Faq } from "@/components/site/Faq";
-import { company, coreValues, industries, processSteps, projects, services, stats } from "@/lib/site-data";
+import { company, coreValues, industries, processSteps, projects, services, socialClients, stats } from "@/lib/site-data";
 
 const title = "D-Code Studio | Web Engineering, AI Automation & Growth Marketing";
 const description =
@@ -37,7 +37,7 @@ function Home() {
 
         <div className="container-x relative z-20 py-24 sm:py-20">
           <Reveal>
-            <span className="eyebrow text-[0.65rem] sm:text-xs">Digital Growth & Technology Solutions · Nagpur, India</span>
+            <span className="eyebrow text-[0.65rem] sm:text-xs">Digital Growth & Technology Solutions · Chennai · Nagpur · Pune</span>
           </Reveal>
           <Reveal delay={120}>
             <h1 className="mt-4 max-w-3xl text-[1.75rem] font-extrabold leading-[1.15] sm:text-4xl lg:text-5xl">
@@ -116,7 +116,7 @@ function Home() {
                   height={1024}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.19_0.035_195/0.95)_25%,oklch(0.19_0.035_195/0.55)_70%,oklch(0.19_0.035_195/0.2)_100%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.19_0.035_195/0.96)_0%,oklch(0.19_0.035_195/0.85)_38%,oklch(0.19_0.035_195/0)_62%)]" />
                 <div className="relative flex h-full flex-col justify-end p-4 sm:p-6">
                   <h3 className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">{ind.title}</h3>
                   <p className="mt-2 text-xs leading-relaxed text-foreground/85 sm:text-sm">{ind.text}</p>
@@ -237,7 +237,7 @@ function Home() {
                   height={800}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.19_0.035_195/0.95)_25%,oklch(0.19_0.035_195/0.6)_70%,oklch(0.19_0.035_195/0.25)_100%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.19_0.035_195/0.96)_0%,oklch(0.19_0.035_195/0.85)_42%,oklch(0.19_0.035_195/0)_66%)]" />
                 <div className="relative flex h-full flex-col justify-end p-4 sm:p-6">
                   <span className="font-display text-2xl font-extrabold text-primary sm:text-3xl">
                     {String(i + 1).padStart(2, "0")}
@@ -250,6 +250,46 @@ function Home() {
           ))}
         </div>
 
+      </Section>
+
+      {/* Social media marketing */}
+      <Section className="bg-[var(--surface)]">
+        <SectionHeading
+          eyebrow="Social Media Marketing"
+          title="Client Instagram pages we run every day"
+          text="Content calendars, reels, creatives and paid campaigns — managed end to end for brands across Chennai, Nagpur and Pune."
+        />
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {socialClients.map((c, i) => (
+            <Reveal key={c.handle} delay={i * 80}>
+              <article className="surface-card group h-full overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={c.image}
+                    alt={`${c.name} Instagram page managed by D-Code Studio`}
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold">{c.name}</h3>
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-primary"
+                  >
+                    <Instagram size={15} /> {c.handle}
+                  </a>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.text}</p>
+                  <p className="mt-3 text-sm font-semibold text-secondary">{c.metric}</p>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
       </Section>
 
       {/* Reviews */}
