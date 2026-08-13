@@ -116,7 +116,7 @@ function Home() {
                   height={1024}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.19_0.035_195/0.95)_25%,oklch(0.19_0.035_195/0.55)_70%,oklch(0.19_0.035_195/0.2)_100%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.19_0.035_195/0.96)_0%,oklch(0.19_0.035_195/0.85)_38%,oklch(0.19_0.035_195/0)_62%)]" />
                 <div className="relative flex h-full flex-col justify-end p-4 sm:p-6">
                   <h3 className="text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">{ind.title}</h3>
                   <p className="mt-2 text-xs leading-relaxed text-foreground/85 sm:text-sm">{ind.text}</p>
@@ -237,7 +237,7 @@ function Home() {
                   height={800}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.19_0.035_195/0.95)_25%,oklch(0.19_0.035_195/0.6)_70%,oklch(0.19_0.035_195/0.25)_100%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,oklch(0.19_0.035_195/0.96)_0%,oklch(0.19_0.035_195/0.85)_42%,oklch(0.19_0.035_195/0)_66%)]" />
                 <div className="relative flex h-full flex-col justify-end p-4 sm:p-6">
                   <span className="font-display text-2xl font-extrabold text-primary sm:text-3xl">
                     {String(i + 1).padStart(2, "0")}
