@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Gauge, Lightbulb, Target } from "lucide-react";
+import { ArrowRight, Gauge, Instagram, Lightbulb, Target } from "lucide-react";
 import { HeroSlider } from "@/components/site/HeroSlider";
 import { Reveal } from "@/components/site/Reveal";
 import { CTABanner, Section, SectionHeading } from "@/components/site/Sections";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Faq } from "@/components/site/Faq";
-import { company, coreValues, industries, processSteps, projects, services, stats } from "@/lib/site-data";
+import { company, coreValues, industries, processSteps, projects, services, socialClients, stats } from "@/lib/site-data";
 
 const title = "D-Code Studio | Web Engineering, AI Automation & Growth Marketing";
 const description =
@@ -250,6 +250,46 @@ function Home() {
           ))}
         </div>
 
+      </Section>
+
+      {/* Social media marketing */}
+      <Section className="bg-[var(--surface)]">
+        <SectionHeading
+          eyebrow="Social Media Marketing"
+          title="Client Instagram pages we run every day"
+          text="Content calendars, reels, creatives and paid campaigns — managed end to end for brands across Chennai, Nagpur and Pune."
+        />
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {socialClients.map((c, i) => (
+            <Reveal key={c.handle} delay={i * 80}>
+              <article className="surface-card group h-full overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={c.image}
+                    alt={`${c.name} Instagram page managed by D-Code Studio`}
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold">{c.name}</h3>
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-primary"
+                  >
+                    <Instagram size={15} /> {c.handle}
+                  </a>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.text}</p>
+                  <p className="mt-3 text-sm font-semibold text-secondary">{c.metric}</p>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
       </Section>
 
       {/* Reviews */}
