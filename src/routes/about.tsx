@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Compass, Target } from "lucide-react";
 import storyImg from "@/assets/story.jpg";
 import { Reveal } from "@/components/site/Reveal";
+import { Logo } from "@/components/site/Logo";
 import { CTABanner, PageHero, Section, SectionHeading } from "@/components/site/Sections";
 import { milestones, projects, stats, team } from "@/lib/site-data";
 import pageBanner from "@/assets/banner-about.jpg";

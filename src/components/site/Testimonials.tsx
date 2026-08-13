@@ -21,7 +21,6 @@ function usePerView() {
 
 export function Testimonials() {
   const [i, setI] = useState(0);
-  const [paused, setPaused] = useState(false);
   const perView = usePerView();
   const total = testimonials.length;
   const maxIndex = Math.max(0, total - perView);
@@ -31,18 +30,12 @@ export function Testimonials() {
   }, [maxIndex]);
 
   useEffect(() => {
-    if (paused) return;
     const t = setInterval(() => setI((v) => (v >= maxIndex ? 0 : v + 1)), 4000);
     return () => clearInterval(t);
-  }, [paused, maxIndex]);
+  }, [maxIndex]);
 
   return (
-    <div
-      className="mt-10"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onTouchStart={() => setPaused(true)}
-    >
+    <div className="mt-10">
       <div className="overflow-hidden">
         <div
           className="flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"

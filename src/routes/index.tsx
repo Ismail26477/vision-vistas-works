@@ -37,7 +37,7 @@ function Home() {
 
         <div className="container-x relative z-20 py-24 sm:py-20">
           <Reveal>
-            <span className="eyebrow text-[0.65rem] sm:text-xs">Digital Growth & Technology Solutions · Nagpur, India</span>
+            <span className="eyebrow text-[0.65rem] sm:text-xs">Digital Growth & Technology Solutions · Chennai · Nagpur · Pune</span>
           </Reveal>
           <Reveal delay={120}>
             <h1 className="mt-4 max-w-3xl text-[1.75rem] font-extrabold leading-[1.15] sm:text-4xl lg:text-5xl">
