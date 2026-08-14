@@ -93,7 +93,7 @@ function Portfolio() {
                   <span className="absolute inset-0 grid place-items-center bg-background/70 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <Expand size={26} className="text-primary" />
                   </span>
-                  <span className="absolute left-4 top-4 rounded-full bg-background/85 px-3 py-1 text-xs font-semibold text-primary backdrop-blur">
+                  <span className="absolute left-4 top-4 rounded-full bg-background/85 px-3 py-1 text-xs font-semibold text-primary">
                     {p.category}
                   </span>
                 </button>
@@ -118,7 +118,7 @@ function Portfolio() {
 
       {lightbox ? (
         <div
-          className="fixed inset-0 z-[60] grid place-items-center bg-background/90 p-4 backdrop-blur"
+          className="fixed inset-0 z-[60] grid place-items-center bg-background/90 p-4"
           role="dialog"
           aria-modal="true"
           aria-label={lightbox.name}
@@ -140,7 +140,7 @@ function Portfolio() {
                 type="button"
                 onClick={() => setLightbox(null)}
                 aria-label="Close preview"
-                className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-background/85 backdrop-blur transition-colors hover:text-primary"
+                className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-background/85 transition-colors hover:text-primary"
               >
                 <X size={18} />
               </button>
