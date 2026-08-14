@@ -3,7 +3,14 @@ import { ArrowRight, Check } from "lucide-react";
 import { useState } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { CTABanner, PageHero, Section, SectionHeading } from "@/components/site/Sections";
-import { processSteps, services } from "@/lib/site-data";
+import {
+  deliverables,
+  engagementFaqNote,
+  engagementModels,
+  processSteps,
+  services,
+  techStack,
+} from "@/lib/site-data";
 import pageBanner from "@/assets/banner-services.jpg";
 
 const title = "Services | Web Engineering, CRM, AI Automation — D-Code Studio";
