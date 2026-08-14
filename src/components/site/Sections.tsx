@@ -31,7 +31,7 @@ export function PageHero({
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(100deg, oklch(0.19 0.035 195 / 0.82) 0%, oklch(0.19 0.035 195 / 0.45) 55%, oklch(0.19 0.035 195 / 0.05) 100%)",
+            "linear-gradient(100deg, oklch(0.16 0.055 291 / 0.82) 0%, oklch(0.16 0.055 291 / 0.45) 55%, oklch(0.16 0.055 291 / 0.05) 100%)",
         }}
       />
       <div className="container-x relative z-10 pb-10 pt-8">
@@ -110,7 +110,7 @@ export function CTABanner({
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(100deg, oklch(0.19 0.035 195 / 0.92) 0%, oklch(0.19 0.035 195 / 0.7) 60%, oklch(0.19 0.035 195 / 0.25) 100%)",
+            "linear-gradient(100deg, oklch(0.16 0.055 291 / 0.92) 0%, oklch(0.16 0.055 291 / 0.7) 60%, oklch(0.16 0.055 291 / 0.25) 100%)",
         }}
       />
       <div className="container-x relative z-10">
