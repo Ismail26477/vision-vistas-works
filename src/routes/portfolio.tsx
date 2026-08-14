@@ -40,8 +40,20 @@ function Portfolio() {
         height="55vh"
       />
 
-      <Section>
+      <Section className="!py-12">
+        <dl className="grid grid-cols-2 gap-4 rounded-3xl border border-border bg-[var(--surface)] p-6 sm:gap-6 lg:grid-cols-4 lg:p-8">
+          {portfolioStats.map((s) => (
+            <div key={s.label}>
+              <dt className="font-display text-2xl font-extrabold text-primary sm:text-3xl">{s.value}</dt>
+              <dd className="mt-1 text-xs text-muted-foreground sm:text-sm">{s.label}</dd>
+            </div>
+          ))}
+        </dl>
+      </Section>
+
+      <Section className="!pt-0">
         <SectionHeading eyebrow="Project Gallery" title="Work by company and capability" />
+
 
         <div className="mt-8 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-2">
           {categories.map((c) => (
