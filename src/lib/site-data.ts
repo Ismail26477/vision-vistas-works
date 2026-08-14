@@ -136,7 +136,22 @@ export const services: Service[] = [
     points: ["GA4 & server-side tracking", "Conversion attribution", "Live dashboards", "KPI reporting"],
     image: project2,
   },
+  {
+    slug: "social-media-marketing",
+    title: "Social Media Marketing",
+    short: "Instagram-first content, reels and community growth.",
+    description:
+      "End-to-end social media management for Indian brands — monthly content calendars, reels and creative production, influencer collaborations, community replies and DM-to-CRM lead capture.",
+    points: [
+      "Monthly content calendars",
+      "Reels & creative production",
+      "Influencer collaborations",
+      "DM-to-CRM lead capture",
+    ],
+    image: social1,
+  },
 ];
+
 
 export type Project = {
   slug: string;
