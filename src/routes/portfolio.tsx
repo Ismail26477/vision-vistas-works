@@ -157,6 +157,27 @@ function Portfolio() {
         </div>
       ) : null}
 
+      {/* Tech behind the work */}
+      <Section className="bg-[var(--surface)]">
+        <SectionHeading
+          eyebrow="Under The Hood"
+          title="The stack powering these builds"
+          text="Every project is engineered on proven, maintainable technology — chosen for the problem, not for the trend."
+          center
+        />
+        <div className="mt-10 flex flex-wrap justify-center gap-2.5">
+          {techStack.map((t, i) => (
+            <Reveal key={t} delay={i * 25}>
+              <span className="inline-flex rounded-full border border-border bg-background px-4 py-2 text-sm font-semibold">
+                {t}
+              </span>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+
+
       <CTABanner
         image={pageBanner}
         eyebrow="Your Project Next"
