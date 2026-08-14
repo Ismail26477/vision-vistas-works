@@ -487,3 +487,66 @@ export const stats = [
   { value: "10+", label: "Industries served" },
   { value: "98%", label: "Client retention" },
 ];
+
+export const engagementModels = [
+  {
+    name: "Project Sprint",
+    best: "Best for one-off builds",
+    price: "Fixed scope",
+    text: "A defined deliverable — website, landing funnel, brand system or CRM module — scoped, priced and shipped on a fixed timeline.",
+    points: ["Written scope & timeline", "Weekly demo builds", "30 days post-launch support", "Source handover"],
+  },
+  {
+    name: "Growth Retainer",
+    best: "Best for scaling brands",
+    price: "Monthly",
+    text: "An embedded team running engineering, SEO, ads and automation together with a shared monthly KPI dashboard.",
+    points: ["Dedicated pod", "Monthly roadmap & reporting", "Continuous CRO & SEO", "Priority turnaround"],
+    featured: true,
+  },
+  {
+    name: "Automation Audit",
+    best: "Best for starting out",
+    price: "Free first review",
+    text: "We review your site, funnel and CRM setup and return a prioritised fix list with effort, impact and cost against each item.",
+    points: ["Technical & speed audit", "Funnel leak analysis", "AI automation opportunities", "Prioritised action plan"],
+  },
+];
+
+export const deliverables = [
+  "Written scope, timeline and acceptance criteria",
+  "Mobile-first responsive builds across all breakpoints",
+  "Core Web Vitals and page-speed optimisation",
+  "On-page SEO, schema markup and analytics wiring",
+  "Security review, backups and SSL configuration",
+  "Documentation, training and source-code handover",
+];
+
+export const techStack = [
+  "React.js",
+  "Next.js",
+  "Node.js",
+  "TypeScript",
+  "WordPress",
+  "Shopify",
+  "PostgreSQL",
+  "Supabase",
+  "WhatsApp Cloud API",
+  "OpenAI & LLM APIs",
+  "Meta Ads",
+  "Google Ads",
+  "GA4 & GTM",
+  "Razorpay",
+  "AWS & Cloudflare",
+  "Figma",
+];
+
+export const portfolioStats = [
+  { value: "50+", label: "Projects shipped" },
+  { value: "3.4x", label: "Average ROAS lift" },
+  { value: "1.8s", label: "Median load time" },
+  { value: "10+", label: "Industry verticals" },
+];
+
+export const engagementFaqNote =
+  "Every engagement starts with a free 30-minute discovery call and a written scope before any invoice.";
