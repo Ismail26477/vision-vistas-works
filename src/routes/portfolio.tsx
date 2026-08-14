@@ -3,7 +3,7 @@ import { Expand, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { CTABanner, PageHero, Section, SectionHeading } from "@/components/site/Sections";
-import { projects } from "@/lib/site-data";
+import { portfolioStats, projects, techStack } from "@/lib/site-data";
 import pageBanner from "@/assets/banner-portfolio.jpg";
 
 const title = "Portfolio & Case Studies | D-Code Studio Nagpur";
@@ -40,8 +40,20 @@ function Portfolio() {
         height="55vh"
       />
 
-      <Section>
+      <Section className="!py-12">
+        <dl className="grid grid-cols-2 gap-4 rounded-3xl border border-border bg-[var(--surface)] p-6 sm:gap-6 lg:grid-cols-4 lg:p-8">
+          {portfolioStats.map((s) => (
+            <div key={s.label}>
+              <dt className="font-display text-2xl font-extrabold text-primary sm:text-3xl">{s.value}</dt>
+              <dd className="mt-1 text-xs text-muted-foreground sm:text-sm">{s.label}</dd>
+            </div>
+          ))}
+        </dl>
+      </Section>
+
+      <Section className="!pt-0">
         <SectionHeading eyebrow="Project Gallery" title="Work by company and capability" />
+
 
         <div className="mt-8 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-2">
           {categories.map((c) => (
@@ -81,7 +93,7 @@ function Portfolio() {
                   <span className="absolute inset-0 grid place-items-center bg-background/70 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <Expand size={26} className="text-primary" />
                   </span>
-                  <span className="absolute left-4 top-4 rounded-full bg-background/85 px-3 py-1 text-xs font-semibold text-primary backdrop-blur">
+                  <span className="absolute left-4 top-4 rounded-full bg-background/85 px-3 py-1 text-xs font-semibold text-primary">
                     {p.category}
                   </span>
                 </button>
@@ -106,7 +118,7 @@ function Portfolio() {
 
       {lightbox ? (
         <div
-          className="fixed inset-0 z-[60] grid place-items-center bg-background/90 p-4 backdrop-blur"
+          className="fixed inset-0 z-[60] grid place-items-center bg-background/90 p-4"
           role="dialog"
           aria-modal="true"
           aria-label={lightbox.name}
@@ -128,7 +140,7 @@ function Portfolio() {
                 type="button"
                 onClick={() => setLightbox(null)}
                 aria-label="Close preview"
-                className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-background/85 backdrop-blur transition-colors hover:text-primary"
+                className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-background/85 transition-colors hover:text-primary"
               >
                 <X size={18} />
               </button>
@@ -144,6 +156,27 @@ function Portfolio() {
           </div>
         </div>
       ) : null}
+
+      {/* Tech behind the work */}
+      <Section className="bg-[var(--surface)]">
+        <SectionHeading
+          eyebrow="Under The Hood"
+          title="The stack powering these builds"
+          text="Every project is engineered on proven, maintainable technology — chosen for the problem, not for the trend."
+          center
+        />
+        <div className="mt-10 flex flex-wrap justify-center gap-2.5">
+          {techStack.map((t, i) => (
+            <Reveal key={t} delay={i * 25}>
+              <span className="inline-flex rounded-full border border-border bg-background px-4 py-2 text-sm font-semibold">
+                {t}
+              </span>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+
 
       <CTABanner
         image={pageBanner}

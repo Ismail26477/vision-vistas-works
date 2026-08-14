@@ -3,7 +3,14 @@ import { ArrowRight, Check } from "lucide-react";
 import { useState } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { CTABanner, PageHero, Section, SectionHeading } from "@/components/site/Sections";
-import { processSteps, services } from "@/lib/site-data";
+import {
+  deliverables,
+  engagementFaqNote,
+  engagementModels,
+  processSteps,
+  services,
+  techStack,
+} from "@/lib/site-data";
 import pageBanner from "@/assets/banner-services.jpg";
 
 const title = "Services | Web Engineering, CRM, AI Automation — D-Code Studio";
@@ -149,6 +156,88 @@ function Services() {
           ))}
         </div>
       </Section>
+
+      {/* Engagement models */}
+      <Section className="bg-[var(--surface)]">
+        <SectionHeading
+          eyebrow="How We Engage"
+          title="Three ways to work with us"
+          text={engagementFaqNote}
+          center
+        />
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          {engagementModels.map((m, i) => (
+            <Reveal key={m.name} delay={i * 80}>
+              <article
+                className={`surface-card flex h-full flex-col p-7 ${
+                  m.featured ? "border-primary/60 shadow-[var(--shadow-glow)]" : ""
+                }`}
+              >
+                {m.featured ? (
+                  <span className="mb-3 self-start rounded-full bg-primary px-3 py-1 text-[0.65rem] font-bold uppercase tracking-widest text-primary-foreground">
+                    Most popular
+                  </span>
+                ) : null}
+                <p className="text-xs font-semibold uppercase tracking-widest text-secondary">{m.best}</p>
+                <h3 className="mt-2 text-xl font-extrabold">{m.name}</h3>
+                <p className="mt-1 font-display text-sm font-bold text-primary">{m.price}</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.text}</p>
+                <ul className="mt-5 flex-1 space-y-2.5">
+                  {m.points.map((p) => (
+                    <li key={p} className="flex items-start gap-2.5 text-sm">
+                      <Check size={17} className="mt-0.5 shrink-0 text-primary" />
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/contact" className="btn-base btn-ghost mt-7 text-sm">
+                  Talk to us <ArrowRight size={15} />
+                </Link>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* Deliverables + stack */}
+      <Section>
+        <div className="grid gap-10 lg:grid-cols-2">
+          <div>
+            <SectionHeading
+              eyebrow="Standard Inclusions"
+              title="What ships with every engagement"
+              text="No hidden line items — these are baked into the price of every project we take on."
+            />
+            <ul className="mt-8 grid gap-3">
+              {deliverables.map((d, i) => (
+                <Reveal key={d} delay={i * 50}>
+                  <li className="flex items-start gap-3 rounded-2xl border border-border bg-[var(--surface)] p-4 text-sm">
+                    <Check size={18} className="mt-0.5 shrink-0 text-primary" />
+                    <span>{d}</span>
+                  </li>
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <SectionHeading
+              eyebrow="Technology Stack"
+              title="The tools behind the builds"
+              text="Chosen per project for maintainability and speed — never because it is trendy."
+            />
+            <div className="mt-8 flex flex-wrap gap-2.5">
+              {techStack.map((t, i) => (
+                <Reveal key={t} delay={i * 30}>
+                  <span className="inline-flex rounded-full border border-border bg-[var(--surface)] px-4 py-2 text-sm font-semibold text-foreground/90">
+                    {t}
+                  </span>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
 
       <CTABanner
         image={pageBanner}

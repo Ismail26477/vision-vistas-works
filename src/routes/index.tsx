@@ -195,7 +195,7 @@ function Home() {
                     height={800}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <span className="absolute left-4 top-4 rounded-full bg-background/85 px-3 py-1 text-xs font-semibold text-primary backdrop-blur">
+                  <span className="absolute left-4 top-4 rounded-full bg-background/85 px-3 py-1 text-xs font-semibold text-primary">
                     {p.category}
                   </span>
                 </div>
