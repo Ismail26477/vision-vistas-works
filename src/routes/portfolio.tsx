@@ -3,7 +3,7 @@ import { Expand, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { CTABanner, PageHero, Section, SectionHeading } from "@/components/site/Sections";
-import { projects } from "@/lib/site-data";
+import { portfolioStats, projects, techStack } from "@/lib/site-data";
 import pageBanner from "@/assets/banner-portfolio.jpg";
 
 const title = "Portfolio & Case Studies | D-Code Studio Nagpur";
