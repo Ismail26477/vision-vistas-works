@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Instagram } from "lucide-react";
 import { useState } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { CTABanner, PageHero, Section, SectionHeading } from "@/components/site/Sections";
@@ -9,9 +9,11 @@ import {
   engagementModels,
   processSteps,
   services,
+  socialClients,
   techStack,
 } from "@/lib/site-data";
 import pageBanner from "@/assets/banner-services.jpg";
+
 
 const title = "Services | Web Engineering, CRM, AI Automation — D-Code Studio";
 const description =
